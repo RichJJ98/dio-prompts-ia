@@ -1,28 +1,80 @@
-# PROMPT DE ANÁLISE DE FEEDBACKS BANCÁRIOS
+# 🏦 Prompt de Análise de Feedbacks Bancários
 
-Atue como um analista de dados sênior especializado em Experiência do Cliente (CX) e Segurança da Informação no setor bancário.
+> Prompt de engenharia para análise inteligente de feedbacks de clientes em canais digitais bancários — focado em CX, segurança da informação e inteligência operacional acionável.
 
-Sua tarefa é analisar uma base de feedbacks de clientes sobre canais digitais (aplicativo, Pix, cartão de crédito, login e atendimento por chat) para identificar vulnerabilidades operacionais, reclamações frequentes e oportunidades de melhoria.
+---
 
-Contexto:
-A análise será utilizada pelo time de produtos e operações para priorizar correções críticas no sistema de transações, reduzir falhas no aplicativo e mitigar riscos de engenharia social ou insatisfação severa. O foco é extrair inteligência acionável de dados brutos.
+## 📌 Sobre o Projeto
 
-Dados disponíveis:
-Serão fornecidos comentários de clientes contendo: Data do comentário, Canal de atendimento, Texto do feedback, Produto citado e Nota de satisfação (de 1 a 5).
+Este repositório contém um prompt estruturado para uso com modelos de linguagem (LLMs) como o Claude ou ChatGPT, desenvolvido para atuar como um **analista de dados sênior** especializado em **Experiência do Cliente (CX)** e **Segurança da Informação** no setor bancário.
 
-Instruções de análise:
-1. Classifique os feedbacks por Tema (Ex: Falha Técnica, Dúvida Comercial, Elogio, Fraude/Segurança), Sentimento (Positivo, Neutro, Negativo) e Urgência (Alta, Média, Baixa).
-2. Identifique os principais padrões de problemas recorrentes e gargalos operacionais.
-3. Aponte evidências textuais diretas nos dados fornecidos para sustentar os pontos críticos levantados.
-4. Sugira ações práticas de curto e médio prazo para a equipe de desenvolvimento e atendimento.
+O objetivo é transformar feedbacks brutos de clientes em **inteligência acionável** para times de produto e operações.
 
-Formato da resposta:
-- Resumo Executivo: Um texto direto de até 5 linhas sintetizando o cenário geral.
-- Tabela de Insights: Colunas contendo [Tema | Sentimento | Urgência | Evidência/Exemplo do feedback | Ação Sugerida].
-- Plano de Ação Prioritário: Uma lista com as 3 principais prioridades que exigem correção imediata.
+---
 
-Restrições:
-- Use APENAS os dados fornecidos. Não invente métricas, estatísticas ou problemas que não estejam na base.
-- ATENÇÃO CRÍTICA: Não exponha dados pessoais ou sensíveis (PII). Caso encontre CPFs, números de cartões, nomes ou telefones nos exemplos de feedback, mascare-os completamente (Ex: XXX.XXX.XXX-XX).
-- Se houver informação insuficiente para determinar a causa de um problema, indique explicitamente essa limitação.
-- Use uma linguagem simples, direta, técnica e estritamente voltada para a tomada de decisão corporativa.
+## 🎯 Casos de Uso
+
+- Priorização de correções críticas em sistemas de transação
+- Identificação de falhas recorrentes no aplicativo
+- Detecção de riscos de engenharia social e fraudes
+- Redução de insatisfação severa com base em evidências textuais
+
+---
+
+## 🔍 Canais Analisados
+
+| Canal         | Exemplos de Produtos |
+|---------------|----------------------|
+| Aplicativo    | Login, Notificações  |
+| Pix           | Transferências, Chaves |
+| Cartão        | Crédito, Débito      |
+| Chat          | Atendimento humano e bot |
+
+---
+
+## 📥 Dados de Entrada Esperados
+
+O prompt espera uma base de feedbacks com as seguintes colunas:
+
+| Campo              | Descrição                          |
+|--------------------|------------------------------------|
+| `data`             | Data do comentário                 |
+| `canal`            | Canal de atendimento               |
+| `feedback`         | Texto livre do cliente             |
+| `produto`          | Produto ou funcionalidade citada   |
+| `nota`             | Satisfação de 1 (péssimo) a 5 (ótimo) |
+
+---
+
+## 📤 Formato da Resposta Gerada
+
+O modelo retornará:
+
+1. **Resumo Executivo** — até 5 linhas com o cenário geral
+2. **Tabela de Insights** — `Tema | Sentimento | Urgência | Evidência | Ação Sugerida`
+3. **Plano de Ação Prioritário** — top 3 correções críticas imediatas
+
+---
+
+## 🔐 Restrições e Segurança
+
+- ✅ Análise baseada **exclusivamente** nos dados fornecidos
+- 🚫 Nenhuma métrica ou problema é inventado
+- 🔒 **PII mascarado automaticamente** (CPF, cartão, telefone, nome)
+- ⚠️ Limitações de dados sinalizadas explicitamente na resposta
+
+---
+
+## 🚀 Como Usar
+
+1. Copie o conteúdo do arquivo [`prompt.md`](./prompt.md) *(ou o bloco abaixo)*
+2. Cole em sua LLM preferida (Claude, ChatGPT, Gemini etc.)
+3. Adicione os dados de feedbacks no final do prompt
+4. Execute e receba a análise estruturada
+
+---
+
+## 🧠 Prompt Completo
+
+<details>
+<summary>Clique para expandir o prompt</summary>
